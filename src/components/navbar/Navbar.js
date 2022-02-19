@@ -24,6 +24,21 @@ import { HiMenuAlt3 } from "react-icons/hi";
 
 export const Navbar = () => {
   const [show, setShow] = useState(false);
+
+  // Scroll
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
+  const closeMobileMenu = (id) => {
+    scrollTo(id);
+
+    setShow(false);
+  };
+
   return (
     <IconContext.Provider value={{ color: "white" }}>
       <Nav>
@@ -35,8 +50,16 @@ export const Navbar = () => {
             </BrandGroup>
 
             <NavMenu show={show}>
-              {navbarData.map((data,index) => {
-                return <NavLinks key={index} to={data.to}>{data.text}</NavLinks>;
+              {navbarData.map((data, index) => {
+                return (
+                  <NavLinks
+                    key={index}
+                    to="/"
+                    onClick={() => closeMobileMenu(data.to)}
+                  >
+                    {data.text}
+                  </NavLinks>
+                );
               })}
             </NavMenu>
             <NavMenuButton onClick={() => setShow(!show)}>

@@ -14,7 +14,7 @@ import { featuresData } from "../../data/FeaturesData";
 
 export const Feature = () => {
   return (
-    <FeatureSection>
+    <FeatureSection id='about'>
       <Container>
         <FeatureHeading>What We Do</FeatureHeading>
         <FeatureGrid>

@@ -48,7 +48,7 @@ export const Content = ({
   }, [animation, inView]);
 
   return (
-    <ContentSection ref={ref}>
+    <ContentSection ref={ref} id='projects'>
       <Container>
         <ContentContainer reverse={reverse}>
           <Tilt className="Tilt" options={{ max: 20, scale: 1.01, speed: 200 }}>

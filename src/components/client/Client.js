@@ -14,7 +14,7 @@ import {
 
 export const Client = () => {
   return (
-    <ClientSection>
+    <ClientSection id='clients'>
       <ClientContainer>
         <ClientHeader>
           <ClientHeading>Our Clients</ClientHeading>
